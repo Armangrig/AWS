@@ -18,7 +18,7 @@ provider "aws" {
   region  = "us-east-2"
 }
 resource "aws_instance" "app_server" {
-  ami           = data.aws_ami.ubuntu.id
+  ami           = arn:aws:iam::546100599093:user/tf-user
   instance_type = "t3.micro"
   key_name      = "app-ssh-key"
 
