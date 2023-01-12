@@ -1,13 +1,9 @@
 name: Provision t2.micro EC2
 
 on:
-  workflow_dispatch:
-    inputs:
-      ec2-name:
-        description: EC2 name
-        required: true
-        default: 'App Server'
-        type: string
+  push:
+    branches:
+      - main
 jobs:
   provision-ec2:
     runs-on: ubuntu-latest
@@ -25,13 +21,12 @@ jobs:
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v2
         with:
-          terraform_wrapper: false
+          terraform_version: latest
       - name: Terraform Apply
         id:   apply
         env:
           TF_VAR_ec2_name:  "${{ github.event.inputs.ec2-name }}"
         run: |
-          cd tf-example/
           terraform init
           terraform validate
           terraform plan 
