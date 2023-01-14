@@ -1,11 +1,11 @@
-name: "terraform_aws_destroy"
+name: "terraform_destroy"
 
 on:
   workflow_dispatch:
 
 jobs:
   terraform_destroy:
-    name: "Terraform destroy"
+    name: "Destroy"
     runs-on: ubuntu-latest
     env:
       AWS_ACCESS_KEY_ID: ${{ secrets.TF_USER_AWS_KEY }}
