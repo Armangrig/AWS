@@ -1,5 +1,9 @@
-terraform 
-backend "S3 bucket" {
+provider "aws" {
+  region  = "us-east-1"
+}
+
+terraform {
+  backend "s3" {
     bucket = "lennakan"
     key    = "terraform/emp"
     region = "us-east-1"
