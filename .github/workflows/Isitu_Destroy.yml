@@ -3,7 +3,6 @@ name: "terraform_aws_destroy"
 on:
   workflow_dispatch:
 
-
 jobs:
   terraform_destroy:
     name: "Terraform destroy"
