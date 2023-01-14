@@ -1,5 +1,5 @@
 terraform {
-  backend "S3" {
+  backend "S3 bucket" {
     bucket = "lennakan"
     key    = "terraform/emp"
     region = "us-east-1"
