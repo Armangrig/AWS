@@ -3,6 +3,7 @@ terraform {
     bucket = "lennakan"
     key    = "terraform/emp"
     region = "us-east-1"
+  }
   
   required_providers {
     aws = {
