@@ -36,6 +36,7 @@ jobs:
   provision-ec2-Destroy:
     runs-on: ubuntu-latest
     needs: [provision-ec2]
+    
     steps:
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
