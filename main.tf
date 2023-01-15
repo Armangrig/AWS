@@ -4,8 +4,8 @@ provider "aws" {
 
 terraform {
   backend "s3" {
-    bucket = "lennakan_aws"
-    key    = "terraform/emp_aws"
+    bucket = "lennakanhay"
+    key    = "terraform/emp"
     region = "us-east-1"
   }
   
