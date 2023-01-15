@@ -31,7 +31,7 @@ jobs:
           terraform validate
           terraform plan 
           terraform apply -auto-approve
-          sleep 80
+          sleep 50
 
   provision-ec2-Destroy:
     runs-on: ubuntu-latest
