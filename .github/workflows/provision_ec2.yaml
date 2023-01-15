@@ -1,4 +1,4 @@
-name: Provision t2.micro EC2
+name: Provision t2.micro AWS EC2
 
 on:
   push:
