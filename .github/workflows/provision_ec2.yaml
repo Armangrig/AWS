@@ -13,6 +13,7 @@ permissions:
       contents: read    # This is required for actions/checkout
 
 
+
 jobs: ss
   provision-ec2:
     runs-on: ubuntu-latest
