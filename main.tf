@@ -10,7 +10,7 @@ terraform {
   }
   
   resource "aws_s3_bucket" "terraform_state" {
-  bucket = "lennakanhay"
+  bucket = "lennakan"
   force_destroy = true
   versioning {
     enabled = true
