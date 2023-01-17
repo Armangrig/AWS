@@ -4,17 +4,8 @@ on:
   push:
     branches:
       - main
-env:
-  BUCKET_NAME : "<karevor>"
-  AWS_REGION : "<us-east-1>"
-# permission can be added at job level or workflow level    
-permissions:
-      id-token: write   # This is required for requesting the JWT
-      contents: read    # This is required for actions/checkout
 
-
-
-jobs: ss
+jobs: 
   provision-ec2:
     runs-on: ubuntu-latest
     steps:
@@ -32,29 +23,6 @@ jobs: ss
         uses: hashicorp/setup-terraform@v2
         with:
           terraform_version: latest
-          
-          
-        
-jobs: S3
-  S3PackageUpload:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Git clone the repository
-        uses: actions/checkout@v3
-      - name: configure aws credentials
-        uses: aws-actions/configure-aws-credentials@v1
-        with:
-          role-to-assume: arn:aws:iam::1234567890:role/example-role
-          role-session-name: samplerolesession
-          aws-region: ${{ env.AWS_REGION }}
-      # Upload a file to AWS s3
-      - name:  Copy index.html to s3
-        run: |
-          aws s3 cp . s3://${{ env.BUCKET_NAME }}/
-          
-          
-          
-          
       - name: Terraform Apply
         id:   apply
         env:
