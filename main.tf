@@ -9,6 +9,14 @@ terraform {
     region = "us-east-1"
   }
   
+  resource "aws_s3_bucket" "terraform_state" {
+  bucket = "lennakanhay"
+  force_destroy = true
+  versioning {
+    enabled = true
+  }
+}
+  
   required_providers {
     aws = {
       source  = "hashicorp/aws"
