@@ -9,13 +9,13 @@ terraform {
     region = "us-east-1"
   }
   
-  resource "aws_s3_bucket" "terraform_state" {
-  bucket = "lennakan"
-  force_destroy = true
-  versioning {
-    enabled = true
-  }
-}
+#  resource "aws_s3_bucket" "terraform_state" {
+#  bucket = "lennakan"
+#  force_destroy = true
+#  versioning {
+#    enabled = true
+#  }
+#}
   
   required_providers {
     aws = {
